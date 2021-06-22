@@ -21,8 +21,8 @@
         </ul>
 
         <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
+            <li><a href="#" class="btn btn--without-border active"><spring:message code="pages.menu.start.text"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.whatup.text"/></a></li>
             <li><a href="#" class="btn btn--without-border">O nas</a></li>
             <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
             <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
