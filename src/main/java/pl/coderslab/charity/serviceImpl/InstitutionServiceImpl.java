@@ -7,7 +7,6 @@ import pl.coderslab.charity.entity.Institution;
 import pl.coderslab.charity.repositories.InstitutionRepository;
 import pl.coderslab.charity.service.InstitutionService;
 
-import java.lang.management.OperatingSystemMXBean;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,9 +37,11 @@ public class InstitutionServiceImpl implements InstitutionService {
     }
 
     @Override
-    public void updateInstitution(Institution institution) {
+    public void updateInstitution(Institution institutionToUpdate) {
+        Institution institution = institutionRepository.findById(institutionToUpdate.getId()).orElseThrow(() -> new IllegalStateException("Institution do not exist"));
+        institution.setName(institutionToUpdate.getName());
+        institution.setDescription(institutionToUpdate.getDescription());
         institutionRepository.save(institution);
-        //todo sprawdzenie istnienia w bazie przed aktualizacją
     }
 
     @Override

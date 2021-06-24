@@ -12,7 +12,7 @@ public interface CategoryService {
 
     public void createCategory(Category category);
 
-    public void updateCategory(Category category);
+    public void updateCategory(Category categoryToUpdate);
 
     public void deleteCategory(Long categoryId);
 }

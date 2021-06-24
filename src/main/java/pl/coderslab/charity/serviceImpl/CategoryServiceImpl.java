@@ -17,6 +17,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
 
+    @Override
     public Category findCategoryById(Long id){
         Optional<Category> categoryOptional = categoryRepository.findById(id);
         if(categoryOptional.isEmpty()){
@@ -25,19 +26,24 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryOptional.get();
     }
 
+    @Override
     public List<Category> findAllCategories(){
         return categoryRepository.findAll();
     }
 
+    @Override
     public void createCategory(Category category){
         categoryRepository.save(category);
     }
 
-    public void updateCategory(Category category){
+    @Override
+    public void updateCategory(Category categoryToUpdate){
+        Category category = categoryRepository.findById(categoryToUpdate.getId()).orElseThrow(()-> new IllegalStateException("Category do not exist"));
+        category.setName(categoryToUpdate.getName());
         categoryRepository.save(category);
-        //todo sprawdzenie istnienia w bazie przed aktualizacją
     }
 
+    @Override
     public void deleteCategory(Long categoryId){
         boolean exist = categoryRepository.existsById(categoryId);
         if (!exist){
