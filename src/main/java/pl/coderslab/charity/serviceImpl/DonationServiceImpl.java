@@ -51,4 +51,15 @@ public class DonationServiceImpl implements DonationService {
         }
         donationRepository.deleteById(donationId);
     }
+
+    @Override
+    public Integer getTotalNumberOfBags() {
+        return donationRepository.getTotalNumberOfBags();
+    }
+
+    @Override
+    public Integer getTotalNumberOfDonations() {
+        return donationRepository.getTotalNumberOfDonations();
+    }
+
 }

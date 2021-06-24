@@ -16,4 +16,8 @@ public interface DonationService {
     public void updateDonation(Donation donationToUpdate);
 
     public void deleteDonation(Long donationId);
+
+    public Integer getTotalNumberOfBags();
+
+    public Integer getTotalNumberOfDonations();
 }

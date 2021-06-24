@@ -1,4 +1,3 @@
-INSERT INTO institutions VALUES (1,'Pomoc dzieciom z ubogich rodzin.','Dbam o Zdrowie');
-INSERT INTO institutions VALUES (2,'Pomoc wybudzaniu dzieci ze śpiączki.','A kogo');
-INSERT INTO institutions VALUES (3,'Pomoc osobom znajdującym się w trudnej sytuacji życiowej.','Dla dzieci');
-INSERT INTO institutions VALUES (4,'Pomoc dla osób nie posiadających miejsca zamieszkania','Bez domu');
+INSERT INTO institutions VALUES (1,'Pomoc dzieciom z ubogich rodzin.','Dbam o Zdrowie'),(2,'Pomoc wybudzaniu dzieci ze śpiączki.','A kogo'),(3,'Pomoc osobom znajdującym się w trudnej sytuacji życiowej.','Dla dzieci'),(4,'Pomoc dla osób nie posiadających miejsca zamieszkania','Bez domu');
+
+INSERT INTO donations VALUES (1,'Wrocław','Komentarz 1','2021-01-01','21:44:52',5,'Kotlarska 42','50-151',1),(2,'Wrocław','Komentarz 2','2021-02-02','21:22:52',8,'Kotlarska 42','50-151',1),(3,'Wrocław','Komentarz 3','2021-03-03','21:33:52',3,'Kotlarska 42','50-151',2);
