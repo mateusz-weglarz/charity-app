@@ -1,11 +1,11 @@
-package pl.coderslab.charity;
+package pl.coderslab.charity.web;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.charity.entity.Category;
 import pl.coderslab.charity.entity.Institution;
+import pl.coderslab.charity.service.CategoryService;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
 
@@ -13,31 +13,19 @@ import java.util.List;
 
 @AllArgsConstructor
 @Controller
-public class HomeController {
+public class DonationController {
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
+    private final CategoryService categoryService;
 
     @ModelAttribute("institutions")
     public List<Institution> getAllInstitutions() {
         return institutionService.findAllInstitutions();
     }
 
-    @ModelAttribute("totalNumberOfBags")
-    public Integer getTotalNumberOfBags() {
-        return donationService.getTotalNumberOfBags();
+    @ModelAttribute("categories")
+    public List<Category> getAllCategories(){
+        return categoryService.findAllCategories();
     }
-
-    @ModelAttribute("totalNumberOfDonations")
-    public Integer getTotalNumberOfDonations() {
-        return donationService.getTotalNumberOfDonations();
-    }
-
-
-    @RequestMapping("/")
-    public String homeAction(Model model) {
-        return "index";
-    }
-
-
 }
