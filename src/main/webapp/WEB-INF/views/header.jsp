@@ -10,7 +10,7 @@
     </ul>
 
     <ul>
-      <li><a href="#" class="btn btn--without-border active"><spring:message code="pages.menu.start.text"/></a></li>
+      <li><a href="${pageContext.request.contextPath}/donation-form" class="btn btn--without-border active"><spring:message code="pages.menu.start.text"/></a></li>
       <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.whatup.text"/></a></li>
       <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.about.text"/></a></li>
       <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.fund&org.text"/></a></li>
