@@ -1,9 +1,6 @@
 package pl.coderslab.charity.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -15,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "donations")
 public class Donation {
@@ -28,6 +26,7 @@ public class Donation {
     private List<Category> categories;
     @ManyToOne
     private Institution institution;
+    private String phoneNumber;
     private String street;
     private String city;
     private String zipCode;

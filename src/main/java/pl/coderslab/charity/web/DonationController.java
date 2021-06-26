@@ -41,7 +41,8 @@ public class DonationController {
     }
 
     @PostMapping("/donation-form")
-    public String newDonationPerform() {
-        return "/";
+    public String newDonationPerform(Donation donation){
+        donationService.createDonation(donation);
+        return "/form-confirmation";
     }
 }
