@@ -42,19 +42,18 @@
             <div data-step="1" class="active">
                 <h3><spring:message code="pages.form.step.one.title.text"/></h3>
                 <c:forEach items="${categories}" var="cat">
-<%--                <div class="form-group form-group--checkbox">--%>
-                    <div class="form-group form-section--checkboxes">
-                    <label>
-                        <form:checkbox path="categories" value="${cat.id}"/>
-                        <span class="checkbox"></span>
-                        <span class="description">${cat.name}
-
-                    </label>
-                </div>
+<%--                    <div class="form-group form-group--checkbox">--%>
+                        <div class="form-group form-section--checkboxes">
+                        <label>
+                            <form:checkbox path="categories" value="${cat.id}"/>
+                            <span class="checkbox"></span>
+                            <span class="description">${cat.name}
+                        </label>
+                    </div>
                 </c:forEach>
+
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step"><spring:message
-                            code="pages.form.button.next.text"/></button>
+                    <button type="button" class="btn next-step"><spring:message code="pages.form.button.next.text"/></button>
                 </div>
             </div>
 
@@ -64,9 +63,10 @@
                 <div class="form-group form-group--inline">
                     <label>
                         <spring:message code="pages.form.step.two.body.text"/>
-                        <form:input type="number" path="quantity" step="1" min="1"/>
+                        <form:input type="number" path="quantity" id="quantity" step="1" min="1"/>
                     </label>
                 </div>
+
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step"><spring:message
                             code="pages.form.button.previous.text"/></button>
@@ -81,10 +81,9 @@
                 <h3><spring:message code="pages.form.step.three.title.text"/></h3>
 
                 <c:forEach items="${institutions}" var="ins">
-                    <%--                    <div class="form-group form-section--checkboxes">--%>
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:radiobutton path="institution.id" value="${ins.id}"/>
+                            <form:radiobutton path="institution" id="institution" value="${ins.id}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
                   <div class="title"><spring:message code="pages.institution.list.name.text"/> “${ins.name}”</div>
@@ -112,25 +111,25 @@
                         <h4><spring:message code="pages.form.step.four.body.adress.text"/></h4>
                         <div class="form-group form-group--inline">
                             <label> <spring:message code="pages.form.step.four.body.adress.streer.text"/>
-                                <form:input path="street" type="text"/> </label>
+                                <form:input path="street" id="street" type="text"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label> <spring:message code="pages.form.step.four.body.adress.city.text"/>
-                                <form:input path="city" type="text"/> </label>
+                                <form:input path="city" id="city" type="text"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 <spring:message code="pages.form.step.four.body.adress.zipCode.text"/>
-                                <form:input path="zipCode" type="text"/>
+                                <form:input path="zipCode" id="zipCode" type="text"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 <spring:message code="pages.form.step.four.body.adress.phoneNumber.text"/>
-                                <form:input path="phoneNumber" type="phone"/>
+                                <form:input path="phoneNumber" id="phoneNumber" type="text"/>
                             </label>
                         </div>
                     </div>
@@ -139,18 +138,18 @@
                         <h4><spring:message code="pages.form.step.four.body.date&time.text"/></h4>
                         <div class="form-group form-group--inline">
                             <label> <spring:message code="pages.form.step.four.body.date&time.date.text"/>
-                                <form:input path="pickUpDate" type="date"/> </label>
+                                <form:input path="pickUpDate" id="pickUpDate" type="date"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label> <spring:message code="pages.form.step.four.body.date&time.time.text"/>
-                                <form:input path="pickUpTime" type="time"/> </label>
+                                <form:input path="pickUpTime" id="pickUpTime" type="time"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 <spring:message code="pages.form.step.four.body.date&time.pickUpComment.text"/>
-                                <form:textarea path="pickUpComment" rows="5"/>
+                                <form:textarea path="pickUpComment" id="pickUpComment" rows="5"/>
                             </label>
                         </div>
                     </div>
@@ -166,6 +165,18 @@
             <!-- STEP 5 -->
             <div data-step="5">
                 <h3>Podsumowanie Twojej darowizny</h3>
+                <script>
+                    const categories = document.querySelectorAll("#categories");
+                    const quantity = document.querySelector("#quantity");
+                    const institution = document.querySelector("#institution");
+                    const street = document.querySelector("#street");
+                    const city = document.querySelector("#city");
+                    const zipCode = document.querySelector("#zipCode");
+                    const phoneNumber = document.querySelector("#phoneNumber");
+                    const pickUpDate = document.querySelector("#pickUpDate");
+                    const pickUpTime = document.querySelector("#pickUpTime");
+                    const pickUpComment = document.querySelector("#pickUpComment");
+                </script>
 
                 <div class="summary">
                     <div class="form-section">
@@ -173,16 +184,12 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span class="summary--text">4 worki ubrań w dobrym stanie dla dzieci</span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
-                                >
+                                <span class="summary--text">Dla fundacji "Mam marzenie" w Warszawie</span>
                             </li>
                         </ul>
                     </div>
@@ -210,8 +217,9 @@
                 </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step"><spring:message code="pages.form.button.previous.text"/></button>
-                    <button type="submit" class="btn next-step"><spring:message code="pages.form.button.confirm.text"/></button>
+                    <button type="button" class="btn prev-step"><spring:message
+                            code="pages.form.button.previous.text"/></button>
+                    <button type="submit" class="btn"><spring:message code="pages.form.button.confirm.text"/></button>
                 </div>
             </div>
         </form:form>
