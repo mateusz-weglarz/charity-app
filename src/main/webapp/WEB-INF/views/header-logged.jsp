@@ -5,7 +5,7 @@
 <header class="header--main-page">
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="${pageContext.request.contextPath}/login" class="btn btn--small btn--without-border"><spring:message code="pages.access.logout.text"/></a></li>
+            <li><a href="${pageContext.request.contextPath}/logout" class="btn btn--small btn--without-border"><spring:message code="pages.access.logout.text"/></a></li>
         </ul>
 
         <ul>
@@ -15,7 +15,7 @@
             <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.fund&org.text"/></a></li>
             <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.contact.text"/></a></li>
             <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.account.text"/></a></li>
-            <div class=""><spring:message code="pages.menu.user.helloUser.text"/> ${user.firstName}</div>
+            <div class=""><spring:message code="pages.menu.user.helloUser.text"/> ${loggedUser.firstName}</div>
         </ul>
     </nav>
 

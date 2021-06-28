@@ -13,8 +13,15 @@
 </head>
 <body>
 
-<%@ include file="header.jsp" %>
+<%@ include file="/WEB-INF/views/header-logged.jsp" %>
 
+<div class="slogan container container--90">
+    <div class="slogan--item">
+        <h1>
+            <spring:message code="pages.main.slogan.text"/>
+        </h1>
+    </div>
+</div>
 
 <section class="form--steps">
     <div class="form--steps-instructions">
@@ -213,7 +220,7 @@
 </section>
 
 
-<%@ include file="footer.jsp" %>
+<%@ include file="/WEB-INF/views/footer-logged.jsp" %>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>

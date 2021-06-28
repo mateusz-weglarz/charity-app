@@ -1,6 +1,7 @@
 package pl.coderslab.charity.web;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.coderslab.charity.entity.Category;
 import pl.coderslab.charity.entity.Donation;
 import pl.coderslab.charity.entity.Institution;
+import pl.coderslab.charity.entity.User;
+import pl.coderslab.charity.security.CurrentUser;
 import pl.coderslab.charity.service.CategoryService;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
+import pl.coderslab.charity.service.UserService;
 
 import java.util.List;
 
@@ -22,6 +26,7 @@ public class DonationController {
     private final InstitutionService institutionService;
     private final DonationService donationService;
     private final CategoryService categoryService;
+    private final UserService userService;
 
     @ModelAttribute("institutions")
     public List<Institution> getAllInstitutions() {
@@ -31,6 +36,11 @@ public class DonationController {
     @ModelAttribute("categories")
     public List<Category> getAllCategories() {
         return categoryService.findAllCategories();
+    }
+
+    @ModelAttribute("loggedUser")
+    public User getLoggedUser(@AuthenticationPrincipal CurrentUser currentUser){
+        return userService.findUserById(currentUser.getUser().getId());
     }
 
     @GetMapping("/donation-form")

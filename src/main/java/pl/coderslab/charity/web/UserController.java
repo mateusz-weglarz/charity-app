@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.entity.Category;
 import pl.coderslab.charity.entity.Institution;
+import pl.coderslab.charity.entity.User;
 import pl.coderslab.charity.security.CurrentUser;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
@@ -40,9 +41,13 @@ public class UserController {
         return donationService.getTotalNumberOfDonations();
     }
 
+    @ModelAttribute("loggedUser")
+    public User getLoggedUser(@AuthenticationPrincipal CurrentUser currentUser){
+        return userService.findUserById(currentUser.getUser().getId());
+    }
+
     @GetMapping("/dashboard")
-    public String getUserDashboard(@AuthenticationPrincipal CurrentUser currentUser, Model model) {
-        model.addAttribute("user", userService.findUserById(currentUser.getUser().getId()));
+    public String getUserDashboard() {
         return "user/dashboard";
     }
 }
