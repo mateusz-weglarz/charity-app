@@ -15,21 +15,27 @@
 <%@ include file="header.jsp" %>
 
 <section class="login-page">
-    <h2>Załóż konto</h2>
+    <h2><spring:message code="pages.registerPage.head.text"/></h2>
     <form>
         <div class="form-group">
-            <input type="email" name="email" placeholder="Email" />
+            <input type="text" name="firstName" placeholder="<spring:message code="pages.registerPage.placeholder.firstName.text"/>" />
         </div>
         <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło" />
+            <input type="text" name="lastName" placeholder="<spring:message code="pages.registerPage.placeholder.LastName.text"/>" />
         </div>
         <div class="form-group">
-            <input type="password" name="password2" placeholder="Powtórz hasło" />
+            <input type="email" name="email" placeholder="<spring:message code="pages.registerPage.placeholder.email.text"/>" />
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="<spring:message code="pages.registerPage.placeholder.password.text"/>" />
+        </div>
+        <div class="form-group">
+            <input type="password" name="matchingPassword" placeholder="<spring:message code="pages.registerPage.placeholder.password.repeat.text"/>" />
         </div>
 
         <div class="form-group form-group--buttons">
-            <a href="login.html" class="btn btn--without-border">Zaloguj się</a>
-            <button class="btn" type="submit">Załóż konto</button>
+            <a href="${pageContext.request.contextPath}/login" class="btn btn--without-border"><spring:message code="pages.access.login.text"/></a>
+            <button class="btn" type="submit"><spring:message code="pages.registerPage.button.registerAccount.text"/></button>
         </div>
     </form>
 </section>
