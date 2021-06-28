@@ -7,12 +7,14 @@ import pl.coderslab.charity.entity.Category;
 import pl.coderslab.charity.repositories.CategoryRepository;
 import pl.coderslab.charity.service.CategoryService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @Primary
 @AllArgsConstructor
+@Transactional
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;

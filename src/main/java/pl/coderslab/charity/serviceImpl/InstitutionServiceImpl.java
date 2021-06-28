@@ -7,12 +7,14 @@ import pl.coderslab.charity.entity.Institution;
 import pl.coderslab.charity.repositories.InstitutionRepository;
 import pl.coderslab.charity.service.InstitutionService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @Primary
 @AllArgsConstructor
+@Transactional
 public class InstitutionServiceImpl implements InstitutionService {
 
     private final InstitutionRepository institutionRepository;

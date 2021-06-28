@@ -2,6 +2,7 @@ package pl.coderslab.charity.serviceImpl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.dto.UserDto;
 import pl.coderslab.charity.entity.Role;
@@ -12,6 +13,7 @@ import pl.coderslab.charity.repositories.UserRepository;
 import pl.coderslab.charity.service.UserService;
 
 import javax.management.relation.RoleResult;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -19,10 +21,12 @@ import java.util.Set;
 @Service
 @Primary
 @AllArgsConstructor
+@Transactional
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public User findUserByEmail(String email) {
@@ -53,7 +57,7 @@ public class UserServiceImpl implements UserService {
         user.setFirstName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());
         user.setEmail(userDto.getEmail());
-        user.setPassword(userDto.getPassword());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setRoles(Set.of(role));
 
         return userRepository.save(user);

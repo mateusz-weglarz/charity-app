@@ -33,8 +33,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/register/form").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/donation-form").authenticated()
+                .anyRequest().authenticated()
                 .and().formLogin()
                 .loginPage("/login").permitAll()
                 .usernameParameter("email")

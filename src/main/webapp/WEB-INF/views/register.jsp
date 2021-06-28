@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title><spring:message code="pages.bar.title.text"/></title>
+
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
 </head>
 <body>
@@ -16,7 +17,7 @@
 
 <section class="login-page">
     <h2><spring:message code="pages.registerPage.head.text"/></h2>
-    <form>
+    <form:form method="post" action="/register/form" modelAttribute="user">
         <div class="form-group">
             <input type="text" name="firstName" placeholder="<spring:message code="pages.registerPage.placeholder.firstName.text"/>" />
         </div>
@@ -37,7 +38,7 @@
             <a href="${pageContext.request.contextPath}/login" class="btn btn--without-border"><spring:message code="pages.access.login.text"/></a>
             <button class="btn" type="submit"><spring:message code="pages.registerPage.button.registerAccount.text"/></button>
         </div>
-    </form>
+    </form:form>
 </section>
 
 <%@ include file="footer.jsp" %>

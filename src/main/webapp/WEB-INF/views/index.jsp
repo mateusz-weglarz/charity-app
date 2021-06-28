@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large"><spring:message code="pages.access.register.text"/></a>
+    <a href="${pageContext.request.contextPath}/register/form" class="btn btn--large"><spring:message code="pages.access.register.text"/></a>
 </section>
 
 <section class="about-us">

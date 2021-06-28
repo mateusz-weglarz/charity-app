@@ -6,4 +6,6 @@ INSERT INTO categories VALUES (1,'ubrania, które nadają się do ponownego uży
 
 INSERT INTO donation_categories VALUES (1,1),(1,3),(1,4),(2,1),(2,2),(3,5),(3,1);
 
-INSERT INTO users VALUES (1,'admin@wp.pl','admin','admin','$2a$10$xNnfVYMOWBzu.f/4Rw1XBuZFg8/4UCSjSNru/..oUPW45sFveehxa'),(2,'user@wp.pl','user','user','$2a$10$oTbnRpcdGUf30PHMuPmWr.LMV85ExRm9OqiQskztI/ompT0NQAHOK');
+INSERT INTO users VALUES (1,'admin@wp.pl',true,'admin','admin','$2a$10$xNnfVYMOWBzu.f/4Rw1XBuZFg8/4UCSjSNru/..oUPW45sFveehxa'),(2,'user@wp.pl',true,'user','user','$2a$10$oTbnRpcdGUf30PHMuPmWr.LMV85ExRm9OqiQskztI/ompT0NQAHOK');
+
+INSERT INTO roles (name) VALUES ('ROLE_USER'),('ROLE_ADMIN');

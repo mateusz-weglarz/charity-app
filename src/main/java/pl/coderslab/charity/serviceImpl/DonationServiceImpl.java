@@ -7,12 +7,14 @@ import pl.coderslab.charity.entity.Donation;
 import pl.coderslab.charity.repositories.DonationRepository;
 import pl.coderslab.charity.service.DonationService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @Primary
 @AllArgsConstructor
+@Transactional
 public class DonationServiceImpl implements DonationService {
 
     private final DonationRepository donationRepository;
@@ -40,7 +42,8 @@ public class DonationServiceImpl implements DonationService {
     public void updateDonation(Donation donationToUpdate) {
         Donation donation = donationRepository.findById(donationToUpdate.getId()).orElseThrow(() -> new IllegalStateException("Donation do not exist"));
         donationRepository.save(donation);
-        //todo zapytać o pl en ścieżka
+        //todo zapytać o pl en ścieżka i impl
+        //todo jesli zalogowany to nie wchodzi na indeks tylko dashboard
     }
 
     @Override
