@@ -5,3 +5,5 @@ INSERT INTO donations VALUES (1,'Wrocław',659836589,'Komentarz 1','2021-01-01',
 INSERT INTO categories VALUES (1,'ubrania, które nadają się do ponownego użycia'),(2,'ubrania, do wyrzucenia'),(3,'zabawki'),(4,'książki'),(5,'gry planszowe'),(6,'inne');
 
 INSERT INTO donation_categories VALUES (1,1),(1,3),(1,4),(2,1),(2,2),(3,5),(3,1);
+
+INSERT INTO users VALUES (1,'user@wp.pl',1,'user','user','$2a$10$xNnfVYMOWBzu.f/4Rw1XBuZFg8/4UCSjSNru/..oUPW45sFveehxa');

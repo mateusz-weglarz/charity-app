@@ -42,10 +42,9 @@
             <div data-step="1" class="active">
                 <h3><spring:message code="pages.form.step.one.title.text"/></h3>
                 <c:forEach items="${categories}" var="cat">
-<%--                    <div class="form-group form-group--checkbox">--%>
-                        <div class="form-group form-section--checkboxes">
+                    <div class="form-group form-group--checkbox">
                         <label>
-                            <form:checkbox path="categories" value="${cat.id}"/>
+                            <input type="checkbox" name="categories" value="${cat.id}"/>
                             <span class="checkbox"></span>
                             <span class="description">${cat.name}
                         </label>
@@ -83,7 +82,7 @@
                 <c:forEach items="${institutions}" var="ins">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:radiobutton path="institution" id="institution" value="${ins.id}"/>
+                            <input type="radio" name="institution" id="institution" value="${ins.id}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
                   <div class="title"><spring:message code="pages.institution.list.name.text"/> “${ins.name}”</div>
@@ -108,27 +107,27 @@
                 <h3><spring:message code="pages.form.step.four.title.text"/></h3>
                 <div class="form-section form-section--columns">
                     <div class="form-section--column">
-                        <h4><spring:message code="pages.form.step.four.body.adress.text"/></h4>
+                        <h4><spring:message code="pages.form.step.four.body.address.text"/></h4>
                         <div class="form-group form-group--inline">
-                            <label> <spring:message code="pages.form.step.four.body.adress.streer.text"/>
+                            <label> <spring:message code="pages.form.step.four.body.address.street.text"/>
                                 <form:input path="street" id="street" type="text"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> <spring:message code="pages.form.step.four.body.adress.city.text"/>
+                            <label> <spring:message code="pages.form.step.four.body.address.city.text"/>
                                 <form:input path="city" id="city" type="text"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                <spring:message code="pages.form.step.four.body.adress.zipCode.text"/>
+                                <spring:message code="pages.form.step.four.body.address.zipCode.text"/>
                                 <form:input path="zipCode" id="zipCode" type="text"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                <spring:message code="pages.form.step.four.body.adress.phoneNumber.text"/>
+                                <spring:message code="pages.form.step.four.body.address.phoneNumber.text"/>
                                 <form:input path="phoneNumber" id="phoneNumber" type="text"/>
                             </label>
                         </div>
@@ -157,60 +156,47 @@
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step"><spring:message
                             code="pages.form.button.previous.text"/></button>
-                    <button type="button" class="btn next-step"><spring:message
+                    <button type="button" class="btn next-step" id="show-summary"><spring:message
                             code="pages.form.button.next.text"/></button>
                 </div>
             </div>
 
             <!-- STEP 5 -->
             <div data-step="5">
-                <h3>Podsumowanie Twojej darowizny</h3>
-                <script>
-                    const categories = document.querySelectorAll("#categories");
-                    const quantity = document.querySelector("#quantity");
-                    const institution = document.querySelector("#institution");
-                    const street = document.querySelector("#street");
-                    const city = document.querySelector("#city");
-                    const zipCode = document.querySelector("#zipCode");
-                    const phoneNumber = document.querySelector("#phoneNumber");
-                    const pickUpDate = document.querySelector("#pickUpDate");
-                    const pickUpTime = document.querySelector("#pickUpTime");
-                    const pickUpComment = document.querySelector("#pickUpComment");
-                </script>
-
+                <h3><spring:message code="pages.form.step.five.title.text"/></h3>
                 <div class="summary">
                     <div class="form-section">
-                        <h4>Oddajesz:</h4>
+                        <h4><spring:message code="pages.form.step.five.body.giving.text"/></h4>
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text">4 worki ubrań w dobrym stanie dla dzieci</span>
+                                <span class="summary--text" id="summary-quantity">4 worki ubrań w dobrym stanie dla dzieci</span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text">Dla fundacji "Mam marzenie" w Warszawie</span>
+                                <span class="summary--text" id="summary-institution">Dla fundacji "Mam marzenie" w Warszawie</span>
                             </li>
                         </ul>
                     </div>
 
                     <div class="form-section form-section--columns">
                         <div class="form-section--column">
-                            <h4>Adres odbioru:</h4>
+                            <h4><spring:message code="pages.form.step.five.body.pickUpAddress.text"/></h4>
                             <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li id="summary-street">Prosta 51</li>
+                                <li id="summary-city">Warszawa</li>
+                                <li id="summary-zipCode">99-098</li>
+                                <li id="summary-phoneNumber">123 456 789</li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
-                            <h4>Termin odbioru:</h4>
+                            <h4><spring:message code="pages.form.step.five.body.pickUpDate&Time.text"/></h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li id="summary-pickUpDate">13/12/2018</li>
+                                <li id="summary-pickUpTime">15:40</li>
+                                <li id="summary-pickUpComment">Brak uwag</li>
                             </ul>
                         </div>
                     </div>
