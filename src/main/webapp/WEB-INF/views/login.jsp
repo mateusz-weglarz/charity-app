@@ -15,19 +15,20 @@
 <%@ include file="header.jsp" %>
 
 <section class="login-page">
-  <h2>Zaloguj się</h2>
-  <form>
+  <h2><spring:message code="pages.loginPage.title.text"/></h2>
+  <form method="post" action="/login">
     <div class="form-group">
-      <input type="email" name="email" placeholder="Email" />
+      <input type="email" name="email" placeholder="<spring:message code="pages.login.placeholder.email.text"/>" />
     </div>
     <div class="form-group">
-      <input type="password" name="password" placeholder="Hasło" />
-      <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
+      <input type="password" name="password" placeholder="<spring:message code="pages.login.placeholder.password.text"/>" />
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </div>
 
     <div class="form-group form-group--buttons">
-      <a href="#" class="btn btn--without-border">Załóż konto</a>
-      <button class="btn" type="submit">Zaloguj się</button>
+      <a href="#" class="btn"><spring:message code="pages.loginPage.password.reset.text"/></a>
+      <a href="#" class="btn"><spring:message code="pages.loginPage.account.register.text"/></a>
+      <button class="btn" type="submit"><spring:message code="pages.loginPage.login.button.text"/></button>
     </div>
   </form>
 </section>

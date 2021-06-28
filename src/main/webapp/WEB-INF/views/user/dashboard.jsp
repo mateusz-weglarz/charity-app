@@ -10,11 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title><spring:message code="pages.bar.title.text"/></title>
 
-    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="../resources/css/style.css"/>"/>
 </head>
 <body>
 
-<%@ include file="header.jsp" %>
+<%@ include file="/WEB-INF/views/header-logged.jsp" %>
 
 <section class="stats">
     <div class="container container--85">
@@ -70,9 +70,9 @@
         <h2><spring:message code="pages.menu.about.text"/></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero
             optio esse quisquam illo omnis.</p>
-        <img src="<c:url value="resources/images/signature.svg"/>" class="about-us--text-signature" alt="Signature"/>
+        <img src="<c:url value="../resources/images/signature.svg"/>" class="about-us--text-signature" alt="Signature"/>
     </div>
-    <div class="about-us--image"><img src="<c:url value="resources/images/about-us.jpg"/>" alt="People in circle"/>
+    <div class="about-us--image"><img src="<c:url value="../resources/images/about-us.jpg"/>" alt="People in circle"/>
     </div>
 </section>
 
@@ -89,8 +89,10 @@
                     <li>
                 </c:if>
                 <div class="col">
-                    <div class="title"><spring:message code="pages.institution.list.name.text"/> "${institution.name}"</div>
-                    <div class="subtitle"><spring:message code="pages.institution.list.description.text"/> ${institution.description}</div>
+                    <div class="title"><spring:message code="pages.institution.list.name.text"/> "${institution.name}"
+                    </div>
+                    <div class="subtitle"><spring:message
+                            code="pages.institution.list.description.text"/> ${institution.description}</div>
                 </div>
                 <c:if test="${loopCounter.count%2==0}">
                     </li>
@@ -102,7 +104,7 @@
 
 </section>
 
-<%@ include file="footer.jsp" %>
+<%@ include file="/WEB-INF/views/footer-logged.jsp" %>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>
