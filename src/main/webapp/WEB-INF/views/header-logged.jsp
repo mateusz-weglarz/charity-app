@@ -5,7 +5,9 @@
 <header class="header--main-page">
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="${pageContext.request.contextPath}/logout" class="btn btn--small btn--without-border"><spring:message code="pages.access.logout.text"/></a></li>
+            <li><a href="${pageContext.request.contextPath}/logout" class="btn btn--small btn--highlighted"><spring:message code="pages.access.logout.text"/></a></li>
+            <li><a href="${pageContext.request.contextPath}?lang=en" class="btn btn--small btn--without-border"><spring:message code="pages.language.en.text"/></a></li>
+            <li><a href="${pageContext.request.contextPath}?lang=pl" class="btn btn--small btn--without-border"><spring:message code="pages.language.pl.text"/></a></li>
         </ul>
 
         <ul>

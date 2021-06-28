@@ -40,7 +40,7 @@ public class DonationServiceImpl implements DonationService {
     public void updateDonation(Donation donationToUpdate) {
         Donation donation = donationRepository.findById(donationToUpdate.getId()).orElseThrow(() -> new IllegalStateException("Donation do not exist"));
         donationRepository.save(donation);
-        //todo zapytać
+        //todo zapytać o pl en ścieżka
     }
 
     @Override

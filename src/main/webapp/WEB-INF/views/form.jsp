@@ -15,14 +15,6 @@
 
 <%@ include file="/WEB-INF/views/header-logged.jsp" %>
 
-<div class="slogan container container--90">
-    <div class="slogan--item">
-        <h1>
-            <spring:message code="pages.main.slogan.text"/>
-        </h1>
-    </div>
-</div>
-
 <section class="form--steps">
     <div class="form--steps-instructions">
         <div class="form--steps-container">
@@ -177,7 +169,9 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text" id="summary-quantity">4 worki ubrań w dobrym stanie dla dzieci</span>
+                                <span class="summary--text" id="summary-quantity1">4 worki ubrań w dobrym stanie dla dzieci</span>
+                                <spring:message code="pages.form.step.five.summary.quantity.text"/>
+                                <li class="summary--text" id="summary-quantity2">4 worki ubrań w dobrym stanie dla dzieci</li>
                             </li>
 
                             <li>
