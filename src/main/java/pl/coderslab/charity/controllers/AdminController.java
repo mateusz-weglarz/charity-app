@@ -1,9 +1,9 @@
-package pl.coderslab.charity.web;
+package pl.coderslab.charity.controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.entity.Institution;
@@ -11,13 +11,16 @@ import pl.coderslab.charity.entity.User;
 import pl.coderslab.charity.security.CurrentUser;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
+import pl.coderslab.charity.service.UserService;
 
 import java.util.List;
 
 @AllArgsConstructor
 @Controller
-public class HomeController {
+@RequestMapping(path = "/admin")
+public class AdminController {
 
+    private final UserService userService;
     private final InstitutionService institutionService;
     private final DonationService donationService;
 
@@ -36,14 +39,13 @@ public class HomeController {
         return donationService.getTotalNumberOfDonations();
     }
 
-
-    @RequestMapping("/")
-    public String homeAction(@AuthenticationPrincipal CurrentUser currentUser,Model model) {
-        if(currentUser!=null){
-            return "redirect:/user/dashboard";
-        }
-        return "index";
+    @ModelAttribute("loggedUser")
+    public User getLoggedUser(@AuthenticationPrincipal CurrentUser currentUser){
+        return userService.findUserById(currentUser.getUser().getId());
     }
 
-
+    @GetMapping("/dashboard")
+    public String getUserDashboard() {
+        return "admin/admin-dashboard";
+    }
 }
