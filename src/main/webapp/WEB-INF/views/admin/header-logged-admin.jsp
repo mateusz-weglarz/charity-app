@@ -11,7 +11,7 @@
     </ul>
 
     <ul>
-      <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.management.institution.text"/></a></li>
+      <li><a href="${pageContext.request.contextPath}/institution/list" class="btn btn--without-border"><spring:message code="pages.menu.management.institution.text"/></a></li>
       <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.management.categories.text"/></a></li>
       <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.management.donations.text"/></a></li>
       <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.management.users.text"/></a></li>

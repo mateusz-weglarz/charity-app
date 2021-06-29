@@ -51,6 +51,8 @@ public class HomeController {
                 }
             }
             //todo co jesli zalogowany jest adminem
+            //todo placeholder w form:form
+            //wiadomosci do insernacjonalizacji w walidacji
         }
         return "index";
     }

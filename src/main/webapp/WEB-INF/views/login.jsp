@@ -44,7 +44,7 @@
 
     <div class="form-group form-group--buttons">
       <a href="#" class="btn"><spring:message code="pages.loginPage.password.reset.text"/></a>
-      <a href="#" class="btn"><spring:message code="pages.loginPage.account.register.text"/></a>
+      <a href="${pageContext.request.contextPath}/register/form" class="btn"><spring:message code="pages.loginPage.account.register.text"/></a>
       <button class="btn" type="submit"><spring:message code="pages.loginPage.login.button.text"/></button>
     </div>
   </form>
