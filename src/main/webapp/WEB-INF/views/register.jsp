@@ -13,7 +13,24 @@
     <link rel="stylesheet" href="<c:url value="../resources/css/style.css"/>"/>
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<header>
+    <nav class="container container--70">
+        <ul class="nav--actions">
+            <li><a href="${pageContext.request.contextPath}/login" class="btn btn--small btn--without-border"><spring:message code="pages.access.login.text"/></a></li>
+            <li><a href="${pageContext.request.contextPath}/register/form" class="btn btn--small btn--highlighted"><spring:message code="pages.access.register.text"/></a></li>
+            <li><a href="${pageContext.request.contextPath}?lang=en" class="btn btn--small btn--without-border"><spring:message code="pages.language.en.text"/></a></li>
+            <li><a href="${pageContext.request.contextPath}?lang=pl" class="btn btn--small btn--without-border"><spring:message code="pages.language.pl.text"/></a></li>
+        </ul>
+
+        <ul>
+            <li><a href="${pageContext.request.contextPath}/donation-form" class="btn btn--without-border active"><spring:message code="pages.menu.start.text"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.whatup.text"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.about.text"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.fund&org.text"/></a></li>
+            <li><a href="#" class="btn btn--without-border"><spring:message code="pages.menu.contact.text"/></a></li>
+        </ul>
+    </nav>
+</header>
 
 <section class="login-page">
     <h2><spring:message code="pages.registerPage.head.text"/></h2>

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<header class="header--main-page">
+<header>
     <nav class="container container--70">
         <ul class="nav--actions">
             <li><a href="${pageContext.request.contextPath}/logout" class="btn btn--small btn--highlighted"><spring:message code="pages.access.logout.text"/></a></li>
@@ -20,12 +20,4 @@
             <div class=""><spring:message code="pages.menu.user.helloUser.text"/> ${loggedUser.firstName}</div>
         </ul>
     </nav>
-
-    <div class="slogan container container--90">
-        <div class="slogan--item">
-            <h1>
-                <spring:message code="pages.main.slogan.text"/>
-            </h1>
-        </div>
-    </div>
 </header>

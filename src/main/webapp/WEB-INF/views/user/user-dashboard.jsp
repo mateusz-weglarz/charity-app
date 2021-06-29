@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<%@ include file="/WEB-INF/views/header-logged.jsp" %>
+<%@ include file="/WEB-INF/views/user/header-logged-user.jsp" %>
 
 <section class="stats">
     <div class="container container--85">
@@ -101,7 +101,7 @@
 
 </section>
 
-<%@ include file="/WEB-INF/views/footer-logged.jsp" %>
+<%@ include file="/WEB-INF/views/user/footer-logged-user.jsp" %>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>
