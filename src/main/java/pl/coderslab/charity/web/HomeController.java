@@ -38,7 +38,10 @@ public class HomeController {
 
 
     @RequestMapping("/")
-    public String homeAction(Model model) {
+    public String homeAction(@AuthenticationPrincipal CurrentUser currentUser,Model model) {
+        if(currentUser!=null){
+            return "redirect:/user/dashboard";
+        }
         return "index";
     }
 

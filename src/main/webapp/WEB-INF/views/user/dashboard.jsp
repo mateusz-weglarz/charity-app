@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title><spring:message code="pages.bar.title.text"/></title>
-
     <link rel="stylesheet" href="<c:url value="../resources/css/style.css"/>"/>
 </head>
 <body>
@@ -61,8 +60,6 @@
             <p><spring:message code="pages.steps.sfourbody.text"/></p>
         </div>
     </div>
-
-    <a href="#" class="btn btn--large"><spring:message code="pages.access.register.text"/></a>
 </section>
 
 <section class="about-us">

@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<%@ include file="header.jsp" %>
+<%@ include file="/WEB-INF/views/header-logged.jsp" %>
 
 <div class="slogan container container--90">
     <h2>
@@ -21,7 +21,7 @@
     </h2>
 </div>
 
-<%@ include file="footer.jsp" %>
+<%@ include file="/WEB-INF/views/footer-logged.jsp" %>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>
