@@ -1,6 +1,7 @@
 package pl.coderslab.charity.controllers;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import pl.coderslab.charity.security.CurrentUser;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
 
+import java.util.Collection;
 import java.util.List;
 
 @AllArgsConstructor
@@ -39,7 +41,16 @@ public class HomeController {
     @RequestMapping("/")
     public String homeAction(@AuthenticationPrincipal CurrentUser currentUser,Model model) {
         if(currentUser!=null){
-            return "user/user-dashboard";
+            Collection<GrantedAuthority> authorities = currentUser.getAuthorities();
+            for(GrantedAuthority aut:authorities){
+                if(aut.getAuthority().equals("ROLE_USER")){
+                    return "redirect:/user/dashboard";
+                }
+                if(aut.getAuthority().equals("ROLE_ADMIN")){
+                    return "redirect:/admin/dashboard";
+                }
+            }
+            //todo co jesli zalogowany jest adminem
         }
         return "index";
     }

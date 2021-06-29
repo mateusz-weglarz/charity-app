@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/register/form").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/admin/**","/institution/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/donation-form").authenticated()
                 .antMatchers("/**").permitAll()
@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login").permitAll()
                 .usernameParameter("email")
                 .successHandler(myAuthenticationSuccessHandler())
-                .and().logout().logoutUrl("/logout")
+                .and().logout().logoutUrl("/logout").permitAll()
                 .logoutSuccessUrl("/")
                 .clearAuthentication(true).invalidateHttpSession(true);
     }

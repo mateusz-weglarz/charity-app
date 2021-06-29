@@ -44,6 +44,7 @@ public class DonationServiceImpl implements DonationService {
         donationRepository.save(donation);
         //todo zapytać o pl en ścieżka i impl
         //todo jesli zalogowany to nie wchodzi na indeks tylko dashboard
+        //todo zapytac o csrf w formularzach
     }
 
     @Override
