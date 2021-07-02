@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.dto.UserDto;
-import pl.coderslab.charity.exeption.UserAlreadyExistException;
+import pl.coderslab.charity.exception.UserAlreadyExistException;
 import pl.coderslab.charity.service.UserService;
 
 import javax.validation.Valid;
