@@ -1,4 +1,4 @@
-package pl.coderslab.charity.exeption;
+package pl.coderslab.charity.exception;
 
 public class UserAlreadyExistException extends Exception{
 }

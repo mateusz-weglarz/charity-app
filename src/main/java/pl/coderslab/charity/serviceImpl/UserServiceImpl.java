@@ -7,14 +7,12 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.charity.dto.UserDto;
 import pl.coderslab.charity.entity.Role;
 import pl.coderslab.charity.entity.User;
-import pl.coderslab.charity.exeption.UserAlreadyExistException;
+import pl.coderslab.charity.exception.UserAlreadyExistException;
 import pl.coderslab.charity.repositories.RoleRepository;
 import pl.coderslab.charity.repositories.UserRepository;
 import pl.coderslab.charity.service.UserService;
 
-import javax.management.relation.RoleResult;
 import javax.transaction.Transactional;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 

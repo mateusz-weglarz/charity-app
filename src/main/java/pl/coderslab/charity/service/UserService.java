@@ -2,7 +2,7 @@ package pl.coderslab.charity.service;
 
 import pl.coderslab.charity.dto.UserDto;
 import pl.coderslab.charity.entity.User;
-import pl.coderslab.charity.exeption.UserAlreadyExistException;
+import pl.coderslab.charity.exception.UserAlreadyExistException;
 
 public interface UserService {
 
