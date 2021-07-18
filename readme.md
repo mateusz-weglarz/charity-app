@@ -1,12 +1,20 @@
-<img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
+# Charity app
+An application for donating unnecessary things to a persons in need , created as a additional project of the Java Developer Web course in [CodersLab IT school](https://coderslab.pl/pl).
 
+## Technologies
+* Backend
+  * Java 11
+  * Spring Boot 2.5
+  * Spring Security
+  * Hibernate
+  * MySQL
+  * Lombok
+* Frontend
+  * HTML
+  * CSS
+  * JavaScript
+## Description
+Charity app is an aplication for making donations, using the MySQL database in conjunction with the web layer. The application allows you to transfer things that you no longer need for foundations supporting people in need.
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
-
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
-
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+### Info
+Application is in constant development, latest stable version of the app is available at ***development*** branch.
